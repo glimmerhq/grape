@@ -42,6 +42,3 @@ aaa.*
 # vendor
 /vendor/*
 !/vendor/.keep
-
-# binstubs
-/bin
