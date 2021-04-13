@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" data-color-mode="dark" data-dark-theme="dark_dimmed">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= Gon::Base.render_data %>
+
+    <title><%= content_for?(:title) ? yield(:title) : 'Grape' %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : 'An open-source Anime and Manga tracker, built with Vue and Ruby on Rails.' %>">
+
+    <%= render partial: 'layouts/head' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navigation' %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    <%= render partial: 'shared/toast_message' %>
+  </body>
+</html>

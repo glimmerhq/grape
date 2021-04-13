@@ -1,0 +1,19 @@
+<div class="container-xl px-3 px-md-4 px-lg-5">
+  <div class="gutter-condensed gutter-lg flex-column flex-md-row d-flex">
+    <div class="clearfix d-flex d-md-block flex-items-center mb-4 mb-md-0">
+      <div class="position-relative d-inline-block col-2 col-md-12 mr-3 mr-md-0 flex-shrink-0">
+        <%= profile_libravatar(@user, 260) %>
+        <div class="profile-names-container float-left col-12 py-3">
+          <h1 class="profile-names">
+            <span class="p-name profile-nickname d-block overflow-hidden">
+              <%= @user.nickname %>
+            </span>
+            <span class="p-nickname profile-username d-block">
+              <%= @user.username%>
+            </span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

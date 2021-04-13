@@ -1,0 +1,40 @@
+<%= render partial: 'layouts/head_tags' %>
+
+<%# Meta tags (og data, twitter, etc.) %>
+<% if Rails.env.development? %>
+  <meta property="og:url" content="http://localhost:3000">
+  <meta property="og:site_name" content="Grape (develop)">
+  <meta property="og:title" content="An open-source Anime and Manga tracker, built with Vue and Ruby on Rails.">
+  <meta property="og:description" content="Grape is the product of a bored high school student with an enthusiasm for open-source projects, and the frustration that most of the good Anime and Manga trackers weren't open-source. It is also the product of two crates of ramen and hot cocoa.">
+
+  <meta property="twitter:site" content="lunaisnotaboy">
+  <meta property="twitter:site:id" content="863366473225469952">
+  <meta property="twitter:creator" content="lunaisnotaboy">
+  <meta property="twitter:creator:id" content="863366473225469952">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Grape (develop)">
+  <meta property="twitter:description" content="Grape is the product of a bored high school student with an enthusiasm for open-source projects, and the frustration that most of the good Anime and Manga trackers weren't open-source. It is also the product of two crates of ramen and hot cocoa.">
+<% else %>
+  <meta property="og:url" content="https://<%= request.host %>">
+  <meta property="og:site_name" content="Grape">
+  <meta property="og:title" content="An open-source Anime and Manga tracker, built with Vue and Ruby on Rails.">
+  <meta property="og:description" content="Grape is the product of a bored high school student with an enthusiasm for open-source projects, and the frustration that most of the good Anime and Manga trackers weren't open-source. It is also the product of two crates of ramen and hot cocoa.">
+
+  <meta property="twitter:site" content="lunaisnotaboy">
+  <meta property="twitter:site:id" content="863366473225469952">
+  <meta property="twitter:creator" content="lunaisnotaboy">
+  <meta property="twitter:creator:id" content="863366473225469952">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Grape">
+  <meta property="twitter:description" content="Grape is the product of a bored high school student with an enthusiasm for open-source projects, and the frustration that most of the good Anime and Manga trackers weren't open-source. It is also the product of two crates of ramen and hot cocoa.">
+<% end %>
+
+<%# Meta tags (user identification, hostname, etc.) %>
+<% if Rails.env.development? %>
+  <meta name="hostname" content="http://localhost:3000">
+<% else %>
+  <meta name="hostname" content="https://<%= request.host %>">
+<% end %>
+<% if user_signed_in? %>
+  <meta name="user-login" content="<%= current_user.username %>">
+<% end %>

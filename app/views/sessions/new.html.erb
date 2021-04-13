@@ -1,0 +1,22 @@
+<div class="auth-form px-3" id="login">
+  <div class="auth-form-body mt-3">
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+      <%= f.label :login, " Username or email address " %>
+      <%= f.text_field :login, autofocus: true, autocomplete: "login", class: "form-control input-block" %>
+
+      <div class="position-relative">
+        <%= f.label :password, " Password " %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-block" %>
+
+        <%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
+
+        <%= link_to "Forgot password?", new_password_path(:user), class: "label-link position-absolute top-0 right-0" %>
+      </div>
+    <% end %>
+  </div>
+
+  <p class="login-callout mt-3">
+    New to Grape?
+    <%= link_to "Create an account", new_registration_path(:user) %>
+  </p>
+</div>

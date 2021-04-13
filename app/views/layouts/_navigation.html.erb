@@ -1,0 +1,39 @@
+<div class="Header">
+  <div class="Header-item">
+    <a href="<%= root_path %>" class="Header-link f4 d-flex flex-items-center">
+      <%= octicon "beaker", class: "mr-2", :height => 32 %>
+      <span>Grape</span>
+    </a>
+  </div>
+  <div class="Header-item">
+    <a href="#" class="Header-link">About</a>
+  </div>
+  <div class="Header-item">
+    <a href="#" class="Header-link">Releases</a>
+  </div>
+  <div class="Header-item Header-item--full">
+    <a href="#" class="Header-link">Team</a>
+  </div>
+  <% if user_signed_in? %>
+    <div class="Header-item position-relative mr-0 d-none d-md-flex">
+      <details class="dropdown details-reset details-overlay d-inline-block">
+        <summary class="Header-link" aria-label="View profile and more">
+          <%= user_libravatar current_user, 20 %>
+          <span class="feature-preview-indicator js-feature-preview-indicator" style="top: 1px;" hidden></span>
+          <span class="dropdown-caret"></span>
+        </summary>
+
+        <details-menu class="dropdown-menu dropdown-menu-sw" style="width: 180px" role="menu">
+          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+          <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item" %></li>
+        </details-menu>
+      </details>
+    </div>
+  <% else %>
+    <div class="Header-item mr-0">
+      <%= link_to "Sign in", login_path, class: "btn btn-outline" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+<div class="auth-form px-3" id="login">
+  <div class="auth-form-body mt-3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.label :username, " Username " %>
+      <%= f.text_field :username, autofocus: true, autocomplete: "login", class: "form-control input-block" %>
+
+      <%= f.label :email, " Email " %>
+      <%= f.text_field :email, autofocus: true, autocomplete: "login", class: "form-control input-block" %>
+
+      <div class="position-relative">
+        <%= f.label :password, " Password " %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control input-block" %>
+
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control input-block" %>
+
+        <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
+
+        <em class="position-absolute top-0 right-0">(<%= @minimum_password_length %> characters minimum)</em>
+      </div>
+    <% end %>
+  </div>
+
+  <p class="login-callout mt-3">
+    Already signed up?
+    <%= link_to "Sign in", login_path %>
+  </p>
+</div>

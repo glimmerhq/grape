@@ -1,0 +1,21 @@
+<% if notice.present? %>
+  <div class="p-1">
+    <div class="Toast Toast--success Toast--animateIn position-absolute bottom-0 left-0">
+      <span class="Toast-icon">
+        <%= octicon "check" %>
+      </span>
+      <span class="Toast-content"><%= notice %></span>
+    </div>
+  </div>
+<% end %>
+
+<% if alert.present? %>
+  <div class="p-1">
+    <div class="Toast Toast--error Toast--animateIn position-absolute bottom-0 left-0">
+      <span class="Toast-icon">
+        <%= octicon "stop" %>
+      </span>
+      <span class="Toast-content"><%= alert %></span>
+    </div>
+  </div>
+<% end %>
