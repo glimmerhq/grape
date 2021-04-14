@@ -19,5 +19,6 @@
     <%= render 'layouts/navigation' %>
     <%= content_for?(:content) ? yield(:content) : yield %>
     <%= render partial: 'shared/toast_message' %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

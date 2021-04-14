@@ -1,0 +1,50 @@
+<div class="position-relative d-inline-block col-2 col-md-12 mr-3 mr-md-0 flex-shrink-0">
+  <%= profile_libravatar(@user, 265) %>
+  <div class="profile-names-container float-left col-12 py-3">
+    <h1 class="profile-names position-relative">
+      <span class="profile-nickname d-block overflow-hidden">
+        <%= @user.nickname || @user.username.capitalize %>
+      </span>
+      <span class="profile-username d-block">
+        <%= @user.username %>
+      </span>
+      <% if @user.admin? %>
+        <span class="position-absolute top-2 right-0">
+          <span class="Label Label--info Label--large">Admin</span>
+        </span>
+      <% end %>
+    </h1>
+    <div class="d-flex flex-column d-md-block mt-3">
+      <div class="p-note mb-3 f4"><div>Crazy transgender developer</div></div>
+
+      <% if user_signed_in? %>
+        <% if current_user.username === @user.username %>
+          <div class="mb-3">
+            <%= link_to "Edit profile", profile_edit_path, class: "btn btn-block" %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="flex-order-1 flex-md-order-none mt-2 mt-md-0">
+        <div class="mb-3">
+          <a class="Link--secondary no-underline no-wrap" href="/<%= @user.username %>/followers">
+            <%= octicon "people", height: 16 %>
+            <span class="text-bold color-text-primary">5</span>
+            followers
+          </a>
+          &middot;
+          <a class="Link--secondary no-underline no-wrap" href="/<%= @user.username %>/following">
+            <span class="text-bold color-text-primary">9</span>
+            following
+          </a>
+          &middot;
+          <a class="Link--secondary no-underline no-wrap" href="/<%= @user.username %>/activity">
+            <%= octicon "clock", :height => 16 %>
+            <span class="text-bold color-text-primary">164</span>
+            hours
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+@import "~@primer/css/index.scss";
+
+@import "../stylesheets/auth.scss";
+@import "../stylesheets/profiles.scss";
+
+.avatar-user {
+  border-radius: 50% !important
+}
