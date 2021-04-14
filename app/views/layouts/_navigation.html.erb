@@ -24,7 +24,7 @@
         </summary>
 
         <details-menu class="dropdown-menu dropdown-menu-sw" style="width: 180px" role="menu">
-          <li><%= link_to "Profile", "/#{current_user.username}", class: "dropdown-item" %></li>
+          <li><%= link_to "Profile", "/users/#{current_user.username}", class: "dropdown-item" %></li>
           <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
           <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
           <li><%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item" %></li>

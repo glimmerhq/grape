@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_14_133648) do
+ActiveRecord::Schema.define(version: 2021_04_14_135608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "animes", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.date "release_date", null: false
+    t.integer "seasons", default: 0, null: false
+    t.bigint "studios_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["studios_id"], name: "index_animes_on_studios_id"
+  end
+
+  create_table "episodes", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.date "air_date", null: false
+    t.string "thumbnail", null: false
+    t.bigint "animes_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["animes_id"], name: "index_episodes_on_animes_id"
+  end
 
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
@@ -32,6 +54,14 @@ ActiveRecord::Schema.define(version: 2021_04_14_133648) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
+  end
+
+  create_table "studios", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.string "logo", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_statuses", force: :cascade do |t|
@@ -63,4 +93,6 @@ ActiveRecord::Schema.define(version: 2021_04_14_133648) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "animes", "studios", column: "studios_id"
+  add_foreign_key "episodes", "animes", column: "animes_id"
 end

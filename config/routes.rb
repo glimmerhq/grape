@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   get '/profile/edit', to: 'profiles#edit'
 
-  get '/:user', to: 'profiles#show'
+  get '/users/:user', to: 'profiles#show'
 
-  get '/:user/followers', to: 'followers#show'
+  get '/users/:user/followers', to: 'followers#show'
 
   root 'home#index'
 
