@@ -29,12 +29,12 @@
         <div class="mb-3">
           <a class="Link--secondary no-underline no-wrap" href="/<%= @user.username %>/followers">
             <%= octicon "people", height: 16 %>
-            <span class="text-bold color-text-primary">5</span>
+            <span class="text-bold color-text-primary"><%= @user.followers.count %></span>
             followers
           </a>
           &middot;
           <a class="Link--secondary no-underline no-wrap" href="/<%= @user.username %>/following">
-            <span class="text-bold color-text-primary">9</span>
+            <span class="text-bold color-text-primary"><%= @user.following_users.count %></span>
             following
           </a>
           &middot;
