@@ -74,3 +74,5 @@ gem 'oj', '~> 3.11'
 gem 'link_header', '~> 0.0'
 
 gem "react_on_rails", "= 12.2"
+
+gem 'mini_racer', platforms: :ruby

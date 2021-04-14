@@ -148,6 +148,7 @@ GEM
       rainbow (>= 2.0.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    libv8-node (15.14.0.0-x86_64-linux)
     link_header (0.0.8)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -160,6 +161,8 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.0.3)
+    mini_racer (0.4.0)
+      libv8-node (~> 15.14.0.0)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
@@ -300,6 +303,7 @@ DEPENDENCIES
   httplog (~> 1.4.3)
   link_header (~> 0.0)
   listen (~> 3.3)
+  mini_racer
   octicons_helper
   oj (~> 3.11)
   pg (~> 1.1)

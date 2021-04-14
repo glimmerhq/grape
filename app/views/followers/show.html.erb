@@ -4,6 +4,7 @@
   <div class="gutter-condensed gutter-lg flex-column flex-md-row d-flex">
     <div class="clearfix d-flex d-md-block flex-items-center mb-4 mb-md-0">
       <%= render partial: 'shared/profile_sidebar' %>
+      <%= react_component("Followers", props: @user_props, prerender: true) %>
     </div>
   </div>
 </div>
